@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planty'x</title>
+    <!-- CSS Stylesheets -->
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.7/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image" href="assets/img/galery-2.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Poppins&display=swap" rel="stylesheet">
+    <!--===== TweenMax CDN =====-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .cta-title {
+        font-family: 'Belleza', sans-serif;
+    }
+    
+    .content-2-about {
+        font-family: 'Belleza', sans-serif;
+    }
+    
+    .contact-title {
+        font-family: 'Belleza', sans-serif;
+    }
+    
+    .title-carousel {
+        font-family: 'Belleza', sans-serif;
+    }
+    
+    @media (max-width: 640px) {
+        #carousel {
+            flex-direction: column;
+        }
+        .carousel-item {
+            max-width: 100%;
+        }
+        .title-carousel {
+            margin-top: 1rem;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+        .contact,
+        .email-subscribe {
+            text-align: center;
+        }
+        .email-subscribe {
+            margin-top: 1rem;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+        .lg\:order-first {
+            order: initial;
+        }
+        .lg\:order-last {
+            order: -1;
+        }
+    }
+</style>
+
+<body class="scroll-smooth">
+    <header id="navbar" class="bg-white sticky top-0 z-10">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="nav-gsap flex h-16 items-center justify-between">
+                <div class="md:flex md:items-center md:gap-12">
+                    <a class="block text-teal-600" href="/">
+                        <span class="sr-only">Home</span>
+                        <img src="assets/icon/Planty's Logo.png" alt="" srcset="" class="sm:grid place-content-center">
+                    </a>
+                </div>
+
+                <div class="hidden md:block">
+                    <nav aria-label="Global">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                        Plant 
+                    </a>
+                            </li>
+
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                        For Offices
+                    </a>
+                            </li>
+
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                      Plants Core
+                    </a>
+                            </li>
+
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                      About
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="sm:flex sm:gap-4">
+                        <div class="flex md:order-2 gap-6">
+                            <button>
+                                <img src="assets/icon/search.svg" alt="" srcset="">
+                            </button>
+                            <button>
+                                <img src="assets/icon/user.svg" alt="" srcset="">
+                            </button>
+                            <button>
+                                <img src="assets/icon/shop.svg" alt="" srcset="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="block md:hidden">
+                        <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--hero-->
+    <section id="hero" class="min-h-screen bg-white">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 sm:flex-wrap">
+            <!-- Image Section -->
+            <div class="relative h-64 rounded-lg order-last lg:order-first sm:h-80 lg:h-full">
+              <img alt="Plant" src="assets/icon/hero.png" class="img-hero absolute inset-0 h-full w-full object-contain max-w-2xl" />
+            </div>
+      
+            <!-- Content Section -->
+            <div class="cta-hero lg:py-24">
+              <h2 class="cta-title text-4xl font-normal text-black sm:text-6xl">
+                Best house plants varieties.
+              </h2>
+      
+              <!-- Call to Action Button -->
+              <a href="#shop" class="mt-8 inline-block rounded-full bg-black px-12 py-3 text-sm font-medium text-white transition hover:bg-gray-500 focus:outline-none focus:ring focus:ring-green-900">
+                Shop Now
+              </a>
+
+                                <!-- Additional Information -->
+                                <h3 class="mt-9 mb-3 text-black font-semibold">Beautiful living greenery for homes and offices</h3>
+                                <p class="font-thin text-sm">We've been mentioned in the press</p>
+
+                                <!-- Brand Logos -->
+                                <div class="brand mt-6 text-2xl font-bold gap-16 flex flex-wrap">
+                                    <h2>Bloomberg</h2>
+                                    <h2>Forbes</h2>
+                                </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+        <!--about-->
+        <section>
+            <div class="container bg-white p-16">
+                <!-- About Content Section -->
+                <div class="container-about">
+                    <div class="content flex flex-wrap gap-6 justify-around">
+                        <!-- Content 1 -->
+                        <div class="content-1-about text-black">
+                            <h1>
+                                Each houseplant set is handled quickly and safely before being sent to your destination in specially designed insulated packaging.
+                            </h1>
+                        </div>
+
+                        <!-- Content 2 -->
+                        <div class="content-2-about text-black font-bold text-4xl">
+                            <h1>
+                                Learn how we take care of your plant at every stage of its journey from our greenhouse to your home.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learn More Button -->
+                <div class="more grid place-content-center content-center mt-9 py-8">
+                    <div class="flex gap-3 btn btn-ghost text-black">
+                        <a href="#layout">Learn More</a>
+                        <img src="assets/icon/learn-more.svg" alt="Learn More Icon">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--carousel-->
+        <section id="carousel" class="bg-white min-h-screen p-9 flex">
+            <!-- Carousel -->
+            <div class="carousel max-w-5xl">
+                <!-- Slide 1 -->
+                <div id="slide1" class="carousel-item relative max-w-5xl">
+                    <img src="assets/img/carousel-1.png" class="w-full" />
+                    <!-- Navigation Buttons for Slide 1 -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="assets/img/carousel-2.jpg" class="w-full" />
+                    <!-- Navigation Buttons for Slide 2 -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="assets/img/carousel-3.jpg" class="w-full" />
+                    <!-- Navigation Buttons for Slide 3 -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div id="slide4" class="carousel-item relative w-full">
+                    <img src="assets/img/carousel-4.jpg" class="w-full" />
+                    <!-- Navigation Buttons for Slide 4 -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title and Testimonials Section -->
+            <div class="title ml-10">
+                <h1 class="title-carousel text-xl text-black lg:text-4xl mb-7">Give a natural touch <br> to your home with green plants <br> that give freshness and beauty.</h1>
+                <a href="#reviews">
+                    <button class="btn text-white">
+                  Testimonials
+                </button>
+                </a>
+            </div>
+        </section>
+
+
+        <!--shop-->
+        <section id="shop" class="min-h-screen">
+            <!-- Shop Title Section -->
+            <div class="container bg-white">
+                <div class="container-shop">
+                    <div class="shop-title p-9">
+                        <div class="shop text-black font-semibold">
+                            <h3>OUR SHOP</h3>
+                        </div>
+                        <h1 class="text-5xl text-black py-5">Here are the best sellers <br> from our varieties</h1>
+                        <button>
+                    <a class="btn bg-black text-white rounded-full w-36 font-extralight" href="#">See all</a>
+                  </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Carousel Section -->
+            <div class="product bg-white px-7">
+                <div class="carousel carousel-center max-w-full p-4 space-x-4 rounded-box flex">
+                    <!-- Product 1 -->
+                    <div class="carousel-item">
+                        <a href="#" class="group block overflow-hidden w-96">
+                            <div class="relative h-[350px] sm:h-[450px]">
+                                <img src="assets/img/plant-1.png" alt="" class="absolute inset-0 h-full w-full" />
+                            </div>
+                            <div class="relative bg-white pt-3 p-4 flex justify-between">
+                                <h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                    Fiddle-leaf fig
+                                </h3>
+                                <p class="text-gray-900">$110.99</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="carousel-item">
+                        <a href="#" class="group block overflow-hidden w-96">
+                            <div class="relative h-[350px] sm:h-[450px]">
+                                <img src="assets/img/plant-2.png" alt="" class="absolute inset-0 h-full w-full" />
+                            </div>
+                            <div class="relative bg-white pt-3 p-4 flex justify-between">
+                                <h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                    Fiddle-leaf fig
+                                </h3>
+                                <p class="text-gray-900">$110.99</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="carousel-item">
+                        <a href="#" class="group block overflow-hidden w-96">
+                            <div class="relative h-[350px] sm:h-[450px]">
+                                <img src="assets/img/plant-3.png" alt="" class="absolute inset-0 h-full w-full" />
+                            </div>
+                            <div class="relative bg-white pt-3 p-4 flex justify-between">
+                                <h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                    Fiddle-leaf fig
+                                </h3>
+                                <p class="text-gray-900">$110.99</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="carousel-item">
+                        <a href="#" class="group block overflow-hidden w-96">
+                            <div class="relative h-[350px] sm:h-[450px]">
+                                <img src="assets/img/plant-4.png" alt="" class="absolute inset-0 h-full w-full" />
+                            </div>
+                            <div class="relative bg-white pt-3 p-4 flex justify-between">
+                                <h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                    Fiddle-leaf fig
+                                </h3>
+                                <p class="text-gray-900">$110.99</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--reviews-->
+        <section id="reviews" class="bg-white">
+            <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+                <h2 class="text-center text-4xl font-bold tracking-tight sm:text-5xl">
+                    Read trusted reviews from our customers
+                </h2>
+
+                <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+                    <blockquote class="rounded-lg bg-gray-100 p-8">
+                        <div class="flex items-center gap-4">
+                            <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="h-16 w-16 rounded-full object-cover" />
+
+                            <div>
+                                <div class="flex justify-center gap-0.5 text-green-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                </div>
+
+                                <p class="mt-1 text-lg font-medium text-gray-700">Paul Starr</p>
+                            </div>
+                        </div>
+
+                        <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
+                            Ga salah pilih tempat, mereka punya pelayanan yang bagus
+                        </p>
+                    </blockquote>
+
+                    <blockquote class="rounded-lg bg-gray-100 p-8">
+                        <div class="flex items-center gap-4">
+                            <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="h-16 w-16 rounded-full object-cover" />
+
+                            <div>
+                                <div class="flex justify-center gap-0.5 text-green-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                </div>
+
+                                <p class="mt-1 text-lg font-medium text-gray-700">Paul Starr</p>
+                            </div>
+                        </div>
+
+                        <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
+                            Layak dicoba, semua produk disini terjamin kualitasnya
+                        </p>
+                    </blockquote>
+
+                    <blockquote class="rounded-lg bg-gray-100 p-8">
+                        <div class="flex items-center gap-4">
+                            <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="h-16 w-16 rounded-full object-cover" />
+
+                            <div>
+                                <div class="flex justify-center gap-0.5 text-green-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          />
+                        </svg>
+                                </div>
+
+                                <p class="mt-1 text-lg font-medium text-gray-700">Paul Starr</p>
+                            </div>
+                        </div>
+
+                        <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-500">
+                            Tanaman disini punya kualitas yang dengan harga yang murah, luar biasa
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!--Layout-->
+        <section id="layout" class="bg-white">
+            <div class="container">
+                <div class="container-galery flex flex-wrap justify-evenly">
+                    <div class="galery-1">
+                        <img src="assets/img/galery-1.png" alt="" class="p-3 w-full">
+                    </div>
+                    <div class="galery-2">
+                        <img src="assets/img/galery-2.png" alt="" class="p-3 w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--social-->
+        <section id="social">
+            <div class="min-h-screen overflow-hidden bg-[url(https://images.unsplash.com/photo-1551640667-224b2be65198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)] bg-cover bg-top bg-no-repeat">
+                <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+                    <!-- Content Area -->
+                    <div class="ltr:sm:text-left rtl:sm:text-right">
+                        <h2 class="text-2xl font-bold text-black sm:text-3xl md:text-5xl">
+                            Get inspired from <br> our Instagram
+                        </h2>
+
+                        <!-- Instagram Hashtag Spotlight -->
+                        <p class="hidden max-w-lg text-black md:mt-6 md:block md:text-lg md:leading-relaxed">
+                            If you use the hashtag #bioomey on Instagram, <br> we'll spotlight you.
+                        </p>
+
+                        <!-- CTA to Check Out Instagram -->
+                        <div class="mt-4 sm:mt-8 flex gap-2 text-black">
+                            <a href="#">
+                      Check it out
+                    </a>
+                            <img src="assets/icon/learn-more.svg" alt="Learn More Icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--contact-->
+        <section id="contact" class="bg-white p-16">
+            <div class="container flex flex-wrap justify-between gap-10">
+                <!-- Contact Title Section -->
+                <div class="contact">
+                    <h1 class="contact-title text-5xl text-black">Stay updated with special offers, <br> plant-parenting tips, and more.</h1>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="contact-form flex flex-wrap gap-6">
+                    <div class="border-black w-full">
+                        <label class="sr-only" for="message">Message</label>
+                        <textarea class="w-full bg-white rounded-lg p-3 text-sm text-black" placeholder="Message" rows="8" id="message"></textarea>
+                    </div>
+                    <div class="email-subscribe grid place-content-center">
+                        <label for="UserEmail" class="relative block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600 place-items-end">
+                    <input type="email" id="UserEmail" placeholder="Email" class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"/>
+                    <span class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
+                      Email
+                    </span>
+                  </label>
+                        <button class="btn mt-6 text-white">
+                    <a href="#">
+                      Send
+                    </a>
+                  </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--footer-->
+        <footer class="footer footer-center p-6 bg-gray-200 text-primary-content">
+            <div class="text-black">
+                <img src="assets/icon/Planty's Logo.png" alt="">
+                <p>Copyright © 2023 - All right reserved</p>
+            </div>
+            <div>
+                <div class="grid grid-flow-col gap-4 text-black">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</body>
+
+</html>
